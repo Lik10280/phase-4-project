@@ -1,0 +1,8 @@
+.home-container {
+    display: flex;
+    justify-content: center; /* move images to the center horizontally */
+    align-items: center; /* move images to the center vertically */
+    background-image: url(https://images.unsplash.com/photo-1506269996138-4c6d92fbd8a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMGJsdWUlMjB3ZWJzaXRlJTIwYmFja2dyb3VuZCUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+
+  }
+  
