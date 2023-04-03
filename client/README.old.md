@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Pata Keja
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About the project
 
-## Available Scripts
+Pata Keja is a room finder React app built with a Ruby on Rails backend.The app is designed to create a platform for apartment owners to post their apartments for people interested in renting them hence promoting their apartments.The user is required to create an account/signup then signin/login to their accounts inorder to add appartments to their lists.
 
-In the project directory, you can run:
+- The following image demonstrates the application functionality:
+  Homepage:
+  <img src ="./Home-page.png">
+  User signup:
+  <img src ="./Sign-UP.png">
+  Login page:
+  <img src ="./Login.png">
 
-### `npm start`
+Figma [design link] https://www.figma.com/file/yvsbaA42gGBvpXmrERBF3o/Untitled?node-id=0%3A1&t=SqZoDvSzgaEgPRAh-1
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Ruby version : _2.7.4_
+- Postman (for testing API endpoints)
+- React Router Dom version 6
 
-### `npm test`
+## Setup Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    * Clone the repository
+    * To set up the backend, run:
+        - bundle install
+    * To set up the frontend, run:
+        - npm install --prefix client
+    * Run the following commands to get the entire project running:
+        - foreman start -f Procfile.dev
+    * On the client directory, run the following command to install react-roter-dom
+        - npm install react-router-dom@6
+    * For installation of React mui, run:
+        - npm install bootstrap-css-only
+        - npm i mdb-react-ui-kit
 
-### `npm run build`
+## Endpoints
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> POST
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    /users
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Create a new user
 
-### `npm run eject`
+  {
+  username:"string",
+  email: "string",
+  password: "string",
+  age:"string"
+  occupation:"string"
+  interest:"string"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  }
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Response
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  201 Created
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> POST (Login)
 
-## Learn More
+    /login
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- User login
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  {
+  username: "string",
+  password: "string"
+  }
 
-### Code Splitting
+- Response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  201 created
 
-### Analyzing the Bundle Size
+> DELETE (Logout)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    /logout
 
-### Making a Progressive Web App
+- Response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  []
 
-### Advanced Configuration
+> Get House types
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    /types
 
-### Deployment
+-Response
+ 
+ {
+  200 OK
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> Get all aparments
 
-### `npm run build` fails to minify
+- Response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  {
+  200 OK
+  }
